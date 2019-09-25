@@ -1,32 +1,36 @@
 const state = {
     coins: [{
         value: 1,
-        title: '1 THB',
         image: '1.png',
     }, {
         value: 2,
-        title: '2 THB',
         image: '2.png',
     }, {
         value: 5,
-        title: '5 THB',
         image: '5.png',
     }, {
         value: 10,
-        title: '10 THB',
         image: '10.png',
-    }]
+    }],
+    total: 0
 }
 const getters = {
     getCoins(state) {
         return state.coins
+    },
+    getTotal(state) {
+        return state.total
     }
 }
 const mutations = {
-
+    ADD_TOTAL(state, money) {
+        state.total += money;
+    },
 }
 const actions = {
-
+    addTotal({ commit }, total) {
+        commit('ADD_TOTAL', total);
+    },
 }
 export default {
     state,

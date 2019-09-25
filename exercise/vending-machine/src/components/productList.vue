@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
   mounted() {
     this.$store.dispatch("loadProducts");

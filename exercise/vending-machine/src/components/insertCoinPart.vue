@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div id="console" class="title">{{money}} THB</div>
+    <div id="console" class="title">{{total}} THB</div>
     <div v-for="coin in coins" :key="coin.value" class="col-md-3 col-sm-12">
       <div class="container">
         <div class="row">
@@ -8,11 +8,11 @@
             class="coin-pic"
             height="78"
             :src="require('../../public/images/'+coin.image)"
-            @click="addMoney(coin.value)"
+            @click="addCoin(coin.value)"
           />
         </div>
         <div class="row">
-          <p class="title" style="margin-left: auto; margin-right: auto;">{{coin.title}}</p>
+          <p class="title" style="margin-left: auto; margin-right: auto;">{{coin.value}} THB</p>
         </div>
       </div>
     </div>
@@ -20,20 +20,22 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
   mounted() {},
   data() {
     return { money: 0 };
   },
   methods: {
-    addMoney(value) {
-      this.money += value;
+    addCoin(value) {
+      this.$store.dispatch("addTotal", value);
     }
   },
   computed: {
     coins() {
       return this.$store.getters.getCoins;
+    },
+    total() {
+      return this.$store.getters.getTotal;
     }
   }
 };

@@ -7,6 +7,7 @@
         </div>
         <div class="col-md-4">
           <myInsertCoinPart></myInsertCoinPart>
+          <myReturnPart></myReturnPart>
         </div>
       </div>
     </div>
@@ -16,11 +17,13 @@
 <script>
 import productlist from "./productList";
 import insertCoinPart from "./insertCoinPart";
+import returnPart from "./returnPart";
 export default {
   name: "Products",
   components: {
     myProductList: productlist,
-    myInsertCoinPart: insertCoinPart
+    myInsertCoinPart: insertCoinPart,
+    myReturnPart: returnPart
   },
   mounted() {
     this.getProducts();
