@@ -13,6 +13,15 @@
     src: url('../public/fonts/Prompt-Bold.ttf');
 }
 
+@font-face {
+    font-family: 'SF-Pro-Text-Regular';
+    src: url('../public/fonts/SF-Pro-Text-Regular.otf');
+}
+
 .title {
+    font-family: 'SF-Pro-Text-Regular';
+}
+
+.text {
     font-family: 'Prompt-Medium';
 }

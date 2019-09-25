@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-9">
+      <div class="row vdivide">
+        <div class="col-md-8">
           <myProductList></myProductList>
         </div>
-        <div class="col-md-3">จ่ายเงิน</div>
+        <div class="col-md-4">
+          <myInsertCoinPart></myInsertCoinPart>
+        </div>
       </div>
     </div>
   </div>
@@ -13,10 +15,12 @@
 
 <script>
 import productlist from "./productList";
+import insertCoinPart from "./insertCoinPart";
 export default {
   name: "Products",
   components: {
-    myProductList: productlist
+    myProductList: productlist,
+    myInsertCoinPart: insertCoinPart
   },
   mounted() {
     this.getProducts();
@@ -38,12 +42,16 @@ export default {
 };
 </script>
 
-
-<style scope>
-.product-pic {
-  border: 1px solid #ddd; /* Gray border */
-  border-radius: 4px; /* Rounded border */
-  padding: 5px; /* Some padding */
-  width: 250px; /* Set a small width */
+<style scoped>
+.row.vdivide [class*="col-"]:not(:last-child):after {
+  background: #e0e0e0;
+  width: 1px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 70px;
 }
 </style>

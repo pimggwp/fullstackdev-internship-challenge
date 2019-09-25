@@ -12,9 +12,9 @@ const state = {
         title: '5 THB',
         image: '5.png',
     }, {
-        value: 5,
-        title: '5 THB',
-        image: '5.png',
+        value: 10,
+        title: '10 THB',
+        image: '10.png',
     }]
 }
 const getters = {
