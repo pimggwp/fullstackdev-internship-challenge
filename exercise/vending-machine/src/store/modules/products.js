@@ -1,14 +1,23 @@
+import { stat } from "fs"
+
 const state = {
-    products: []
+    products: [],
+    product_orders: []
 }
 const getters = {
     getProducts(state) {
         return state.products
+    },
+    getProductOrders(state) {
+        return state.product_orders
     }
 }
 const mutations = {
     SET_PRODUCTS(state, products) {
         state.products = products
+    },
+    ADD_PRODUCT(state, product) {
+        state.product_orders.push(product)
     }
 }
 const actions = {
@@ -20,7 +29,11 @@ const actions = {
                 console.log(r.data)
             })
 
+    },
+    addProduct({ commit }, product) {
+        commit('ADD_PRODUCT', product)
     }
+
 }
 export default {
     state,

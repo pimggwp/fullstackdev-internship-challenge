@@ -7,7 +7,9 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div id="console">45454545</div>
+      <div id="console">
+        change 3 THB
+      </div>
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@ export default {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  font-size: 40px;
+  font-size: 25px;
   height: 350px;
 }
 </style>

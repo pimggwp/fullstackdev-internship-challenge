@@ -23,14 +23,20 @@ const getters = {
     }
 }
 const mutations = {
-    ADD_TOTAL(state, money) {
-        state.total += money;
+    ADD_TOTAL(state, total) {
+        state.total += total;
     },
+    DECREASE_TOTAL(state, price) {
+        state.total -= price;
+    }
 }
 const actions = {
     addTotal({ commit }, total) {
         commit('ADD_TOTAL', total);
     },
+    decreaseTotal({ commit }, price) {
+        commit('DECREASE_TOTAL', price);
+    }
 }
 export default {
     state,
