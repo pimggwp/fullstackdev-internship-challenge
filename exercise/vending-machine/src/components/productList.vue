@@ -23,10 +23,12 @@ export default {
   methods: {
     addProduct(product) {
       if (this.total >= product.price) {
-        this.$store.dispatch("addProduct", product);
-        this.$store.dispatch("decreaseTotal", product.price);
+        if (this.ReturnCoin == false) {
+          this.$store.dispatch("addProduct", product);
+          this.$store.dispatch("decreaseTotal", product.price);
+        }
       } else {
-        this.$swal({ title: "Please insert more coins.", type: 'warning' });
+        this.$swal({ title: "Please insert more coins.", type: "warning" });
       }
     }
   },
@@ -36,6 +38,9 @@ export default {
     },
     total() {
       return this.$store.getters.getTotal;
+    },
+    ReturnCoin() {
+      return this.$store.getters.getReturnCoin;
     }
   }
 };

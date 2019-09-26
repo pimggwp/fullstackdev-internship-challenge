@@ -18,7 +18,7 @@ const mutations = {
     },
     ADD_PRODUCT(state, product) {
         state.product_order = product
-        setTimeout(function() { //setting timeout to remove it later
+        setTimeout(function() {
             state.product_order = null
         }, 2000)
     }

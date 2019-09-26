@@ -27,7 +27,9 @@ export default {
   },
   methods: {
     addCoin(value) {
-      this.$store.dispatch("addTotal", value);
+      if (this.ReturnCoin == false) {
+        this.$store.dispatch("addTotal", value);
+      }
     }
   },
   computed: {
@@ -36,6 +38,9 @@ export default {
     },
     total() {
       return this.$store.getters.getTotal;
+    },
+    ReturnCoin() {
+      return this.$store.getters.getReturnCoin;
     }
   }
 };

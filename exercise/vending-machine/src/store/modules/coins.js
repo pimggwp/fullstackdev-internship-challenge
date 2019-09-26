@@ -1,18 +1,19 @@
 const state = {
     coins: [{
-        value: 1,
-        image: '1.png',
-    }, {
-        value: 2,
-        image: '2.png',
+        value: 10,
+        image: '10.png',
     }, {
         value: 5,
         image: '5.png',
     }, {
-        value: 10,
-        image: '10.png',
+        value: 2,
+        image: '2.png',
+    }, {
+        value: 1,
+        image: '1.png',
     }],
-    total: 0
+    total: 0,
+    return_coin: false,
 }
 const getters = {
     getCoins(state) {
@@ -20,6 +21,9 @@ const getters = {
     },
     getTotal(state) {
         return state.total
+    },
+    getReturnCoin(state) {
+        return state.return_coin
     }
 }
 const mutations = {
@@ -28,6 +32,15 @@ const mutations = {
     },
     DECREASE_TOTAL(state, price) {
         state.total -= price;
+    },
+    RESET_TOTAL(state) {
+        state.total = 0;
+    },
+    IS_RETURN(state) {
+        state.return_coin = true;
+    },
+    NOT_RETURN(state) {
+        state.return_coin = false;
     }
 }
 const actions = {
@@ -36,6 +49,15 @@ const actions = {
     },
     decreaseTotal({ commit }, price) {
         commit('DECREASE_TOTAL', price);
+    },
+    resetTotal({ commit }) {
+        commit('RESET_TOTAL')
+    },
+    is_return({ commit }) {
+        commit('IS_RETURN')
+    },
+    not_return({ commit }) {
+        commit('NOT_RETURN')
     }
 }
 export default {
