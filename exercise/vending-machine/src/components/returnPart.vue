@@ -28,7 +28,7 @@
               />
             </div>
             <div class="col-md-6">
-              <p class="animate mt-4" v-if="change_coin!=0 && ReturnCoin==true">X {{change_coin}}</p>
+              <p class="animate mt-4 title" v-if="change_coin!=0 && ReturnCoin==true">X {{change_coin}}</p>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default {
         function() {
           this.reset_all();
         }.bind(this),
-        3000
+        5000
       );
     },
     reset_all() {

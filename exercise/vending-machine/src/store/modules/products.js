@@ -20,7 +20,7 @@ const mutations = {
         state.product_order = product
         setTimeout(function() {
             state.product_order = null
-        }, 2000)
+        }, 5000)
     }
 }
 const actions = {
