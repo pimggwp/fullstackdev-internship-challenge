@@ -2,14 +2,14 @@ import { stat } from "fs"
 
 const state = {
     products: [],
-    product_orders: []
+    product_order: null
 }
 const getters = {
     getProducts(state) {
         return state.products
     },
-    getProductOrders(state) {
-        return state.product_orders
+    getProductOrder(state) {
+        return state.product_order
     }
 }
 const mutations = {
@@ -17,7 +17,10 @@ const mutations = {
         state.products = products
     },
     ADD_PRODUCT(state, product) {
-        state.product_orders.push(product)
+        state.product_order = product
+        setTimeout(function() { //setting timeout to remove it later
+            state.product_order = null
+        }, 2000)
     }
 }
 const actions = {

@@ -41,7 +41,8 @@ export default {
           this.products = response.data.data;
         });
     }
-  }
+  },
+  
 };
 </script>
 
