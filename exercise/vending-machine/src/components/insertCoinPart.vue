@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row insert-coin">
     <div id="console" class="title">{{total}} THB</div>
     <div v-for="coin in coins" :key="coin.value" class="col-md-3 col-sm-12">
       <div class="container">
@@ -7,6 +7,7 @@
           <img
             class="coin-pic"
             height="78"
+            :alt="coin.value"
             :src="require('../../public/images/'+coin.image)"
             @click="addCoin(coin.value)"
           />

@@ -31,7 +31,6 @@ const actions = {
                 commit('SET_PRODUCTS', r.data)
                 console.log(r.data)
             })
-
     },
     addProduct({ commit }, product) {
         commit('ADD_PRODUCT', product)

@@ -5,7 +5,7 @@
       @click="return_change()"
     >Receive change</button>
     <div class="col-md-6">
-      <div id="console">
+      <div id="console" class="console-product">
         <img
           v-if="orders"
           class="product-pic animate bottom-position"
@@ -16,19 +16,23 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div id="console">
+      <div id="console" class="console-change">
         <div v-for="(change_coin,index) in change" :key="index">
           <div class="row element-center" style="width:80%">
             <div class="col-md-6">
               <img
                 v-if="change_coin!=0 && ReturnCoin==true"
                 class="animate mt-2"
+                :alt="'change-' +coins[index].value"
                 height="70"
                 :src="require('../../public/images/'+coins[index].image)"
               />
             </div>
             <div class="col-md-6">
-              <p class="animate mt-4 title" v-if="change_coin!=0 && ReturnCoin==true">X {{change_coin}}</p>
+              <p
+                class="animate mt-4 title"
+                v-if="change_coin!=0 && ReturnCoin==true"
+              >X {{change_coin}}</p>
             </div>
           </div>
         </div>
@@ -41,12 +45,11 @@
 export default {
   mounted() {},
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     return_change() {
-      this.$store.dispatch('is_return');
+      this.$store.dispatch("is_return");
       setTimeout(
         function() {
           this.reset_all();
@@ -55,7 +58,7 @@ export default {
       );
     },
     reset_all() {
-      this.$store.dispatch('not_return');
+      this.$store.dispatch("not_return");
       this.$store.dispatch("resetTotal");
     }
   },
@@ -80,7 +83,7 @@ export default {
       }
       return change;
     },
-    ReturnCoin(){
+    ReturnCoin() {
       return this.$store.getters.getReturnCoin;
     }
   }
