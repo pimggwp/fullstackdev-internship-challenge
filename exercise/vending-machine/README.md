@@ -1,3 +1,13 @@
+Project Details :
+🔥 Technologies
+Front-end Framework : Vue
+CSS Framework : Bootstrap
+UI testing : cypress.io
+🔥 Deployment
+deploy on Firebase Hosting
+Hosting URL: https://vending-machine-716d9.firebaseapp.com
+
+
 # vending-machine
 
 > A Vue.js project
