@@ -7,7 +7,7 @@
           <img
             class="coin-pic"
             height="78"
-            :alt="coin.value"
+            :alt="'coin-' + coin.value"
             :src="require('../../public/images/'+coin.image)"
             @click="addCoin(coin.value)"
           />
